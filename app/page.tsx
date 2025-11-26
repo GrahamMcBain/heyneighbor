@@ -1,10 +1,11 @@
+'use client'
+
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
-import Button from '@/components/Button'
+import CTAButton from '@/components/CTAButton'
 import CalloutCard from '@/components/CalloutCard'
 import PhotoCarousel from '@/components/PhotoCarousel'
 import WaveDivider from '@/components/WaveDivider'
@@ -44,11 +45,7 @@ export default function HomePage() {
               </p>
               
               <div className="pt-4">
-                <Link href="/start">
-                  <Button size="lg">
-                    Start Here
-                  </Button>
-                </Link>
+                <CTAButton size="lg" />
               </div>
             </div>
             
@@ -110,11 +107,7 @@ export default function HomePage() {
             <p className="text-hn-blue/70 mb-8 leading-relaxed text-lg">
               Every week, chapter leads and community builders hop on a casual call to share wins, ask questions, and get support.
             </p>
-            <Link href="/start">
-              <Button size="lg">
-                Start Here
-              </Button>
-            </Link>
+            <CTAButton size="lg" />
           </CalloutCard>
         </div>
       </Section>
@@ -161,11 +154,7 @@ export default function HomePage() {
             </a>
           </div>
           
-          <Link href="/start">
-            <Button size="lg">
-              Start Here
-            </Button>
-          </Link>
+          <CTAButton size="lg" />
         </div>
       </Section>
 
@@ -186,11 +175,7 @@ export default function HomePage() {
             Whether you want to start something new or join an existing chapter, we're here to help.
           </p>
           
-          <Link href="/start">
-            <Button size="lg">
-              Start Here
-            </Button>
-          </Link>
+          <CTAButton size="lg" />
         </div>
       </Section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -16,6 +17,11 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="font-inter text-hn-blue bg-hn-parchment antialiased">
         {children}
+        <Script 
+          id="mcjs" 
+          strategy="lazyOnload"
+          src="https://chimpstatic.com/mcjs-connected/js/users/2e0da63a1ddb9e0385e40b5ad/ba17db64d81bcb275b14a5db8.js"
+        />
       </body>
     </html>
   )

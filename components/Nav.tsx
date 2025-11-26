@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
-import Button from './Button'
+import CTAButton from './CTAButton'
 
 const Nav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,11 +37,7 @@ const Nav: React.FC = () => {
           </Link>
 
           <div className="hidden md:flex items-center">
-            <Link href="/start">
-              <Button size="sm">
-                Start Here
-              </Button>
-            </Link>
+            <CTAButton size="sm" />
           </div>
 
           <button
@@ -54,14 +50,7 @@ const Nav: React.FC = () => {
 
         {isOpen && (
           <div className="md:hidden bg-white rounded-2xl shadow-xl p-6 mb-4 border border-hn-grey/30">
-            <Link 
-              href="/start" 
-              onClick={() => setIsOpen(false)}
-            >
-              <Button className="w-full">
-                Start Here
-              </Button>
-            </Link>
+            <CTAButton className="w-full" />
           </div>
         )}
       </div>

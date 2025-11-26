@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import Button from './Button'
+import CTAButton from './CTAButton'
 
 const Footer: React.FC = () => {
   return (
@@ -60,11 +59,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
             
-            <Link href="/start">
-              <Button size="sm">
-                Start Here
-              </Button>
-            </Link>
+            <CTAButton size="sm" />
           </div>
         </div>
         
