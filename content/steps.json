@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome Night",
+    "description": "Host your first neighborhood gathering to introduce the concept"
+  },
+  {
+    "id": 2,
+    "title": "Name Tags & Snacks",
+    "description": "Create a welcoming atmosphere with simple refreshments"
+  },
+  {
+    "id": 3,
+    "title": "Simple Icebreakers",
+    "description": "Easy conversation starters to help people connect"
+  },
+  {
+    "id": 4,
+    "title": "Weekly Rhythm",
+    "description": "Establish a consistent meeting schedule that works for everyone"
+  },
+  {
+    "id": 5,
+    "title": "Invitation Scripts",
+    "description": "Proven templates for inviting neighbors to join your community"
+  },
+  {
+    "id": 6,
+    "title": "Roles & Helpers",
+    "description": "Distribute responsibilities to build ownership and engagement"
+  },
+  {
+    "id": 7,
+    "title": "Shared Calendar",
+    "description": "Keep everyone informed about upcoming events and activities"
+  },
+  {
+    "id": 8,
+    "title": "New Neighbor Outreach",
+    "description": "Welcome newcomers and help them feel included from day one"
+  },
+  {
+    "id": 9,
+    "title": "Micro-Events",
+    "description": "Organize small, low-pressure activities to deepen connections"
+  },
+  {
+    "id": 10,
+    "title": "Pass the Baton",
+    "description": "Ensure your chapter continues to thrive with new leadership"
+  }
+]
