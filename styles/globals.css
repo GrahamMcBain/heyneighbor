@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,6 +8,7 @@
   --color-hn-parchment: #F4EDEA;
   --color-hn-apricot: #F4D1AE;
   
+  --font-family-display: 'Baloo 2', system-ui, sans-serif;
   --font-family-poppins: 'Poppins', system-ui, sans-serif;
   --font-family-inter: 'Inter', system-ui, sans-serif;
 }
@@ -22,7 +23,11 @@
     @apply antialiased;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
+    font-family: var(--font-family-display);
+  }
+  
+  h3, h4, h5, h6 {
     font-family: var(--font-family-poppins);
   }
 }
@@ -42,10 +47,6 @@
     height: 80px;
   }
   
-  .wave-divider-flip {
-    transform: rotate(180deg);
-  }
-  
   .blob-shape {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: blob-morph 8s ease-in-out infinite;
@@ -62,7 +63,12 @@
   
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, var(--color-hn-blue) 0%, var(--color-hn-cyan) 100%);
+    background-image: linear-gradient(
+      135deg,
+      #F4D1AE 0%,
+      #ff9f68 50%,
+      #e88a5a 100%
+    );
   }
   
   .card-hover {
@@ -71,10 +77,34 @@
   
   .card-hover:hover {
     @apply -translate-y-1 shadow-xl;
+    transform: translateY(-0.25rem) rotate(-0.5deg);
   }
   
   .glow {
-    box-shadow: 0 0 40px rgba(6, 188, 193, 0.15);
+    box-shadow: 0 0 30px rgba(244, 209, 174, 0.5);
+  }
+  
+  .polaroid {
+    @apply bg-hn-parchment rounded-xl shadow-lg border border-hn-grey/30;
+    padding: 0.5rem 0.5rem 1.25rem;
+  }
+  
+  .hand-underline {
+    position: relative;
+    display: inline;
+  }
+  
+  .hand-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.05em;
+    height: 0.25em;
+    background: rgba(244, 209, 174, 0.8);
+    border-radius: 999px;
+    transform: rotate(-1deg);
+    z-index: -1;
   }
 }
 

@@ -14,7 +14,7 @@ const CalloutCard: React.FC<CalloutCardProps> = ({
 }) => {
   const variants = {
     default: 'bg-white border border-hn-grey/30 shadow-xl shadow-hn-blue/5',
-    glow: 'bg-white border border-hn-cyan/20 shadow-xl shadow-hn-cyan/10 glow',
+    glow: 'bg-white border border-hn-apricot/30 shadow-xl shadow-hn-apricot/20 glow',
     accent: 'bg-gradient-to-br from-hn-apricot/20 to-hn-parchment border border-hn-apricot/30'
   }
 
