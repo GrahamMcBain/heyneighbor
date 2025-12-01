@@ -35,14 +35,14 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 order-2 lg:order-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hn-blue leading-tight text-balance">
-                Make your block feel like 
+                Change your neighborhood, 
                 <span className="block mt-2">
-                  <span className="gradient-text">summer camp.</span>
+                  <span className="gradient-text">change the world.</span>
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-hn-blue/80 leading-relaxed max-w-lg">
-                Hey Neighbor gives you simple weekly prompts to knock on doors, share food, and turn the people next door into real friends.
+                Hey Neighbor gives you a simple playbook and weekly support to turn your neighborhood into the community you're missing.
               </p>
               
               <div className="pt-4">
@@ -95,15 +95,14 @@ export default function HomePage() {
           </div>
           
           <div className="order-1 lg:order-2 text-center lg:text-left">
-            <p className="text-hn-apricot font-semibold text-sm mb-2 tracking-wide">little steps, big community</p>
             <h2 className="text-3xl md:text-4xl font-bold text-hn-blue mb-6">
-              Turning 10,000 neighborhoods into little camps
+              We're turning 10,000 neighborhoods into communities
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-hn-blue/70 mb-6">
-              Join neighbors around the country who are throwing porch potlucks, firepit nights, and block parties with the Hey Neighbor plan.
+              Join the hundreds of people around the country who are using the Hey Neighbor plan to build deep meaningful relationships with their neighbors.
             </p>
             <p className="text-xl md:text-2xl font-semibold text-hn-blue">
-              Knock on a door today, <span className="hand-underline">and start a story you'll still be telling next summer.</span>
+              Knock on doors, <span className="hand-underline">and change the lives of the people around you.</span>
             </p>
           </div>
         </div>
@@ -119,10 +118,10 @@ export default function HomePage() {
               <span className="text-3xl">🏕️</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-hn-blue mb-4">
-              Our Weekly Campfire Call
+              Join the Weekly Call
             </h2>
             <p className="text-hn-blue/70 mb-8 leading-relaxed text-lg">
-              Every week, community builders hop on a casual call to swap stories, share what worked (and what didn't), and cheer each other on.
+              Every week, chapter leads and community builders hop on a casual call to share wins, ask questions, and get support.
             </p>
             <CTAButton size="lg" />
           </CalloutCard>
@@ -135,10 +134,10 @@ export default function HomePage() {
       <Section background="white">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-hn-blue mb-4">
-            Come hang out with us online
+            Follow Hey Neighbor on Socials
           </h2>
           <p className="text-hn-blue/70 mb-12 max-w-xl mx-auto text-lg">
-            Behind-the-scenes neighbor stories, silly moments, and ideas you can steal for your block.
+            Join the community and stay up to date
           </p>
           
           <div className="flex justify-center gap-8 mb-12">
@@ -186,10 +185,10 @@ export default function HomePage() {
         
         <div className="text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-hn-blue mb-4">
-            Ready to meet your neighbors?
+            Ready to build community?
           </h2>
           <p className="text-hn-blue/70 mb-10 text-lg max-w-xl mx-auto">
-            Whether you're starting from "we just wave in the driveway" or already hosting potlucks, we'll give you simple steps to grow a real community.
+            Whether you want to start something new or join an existing chapter, we're here to help.
           </p>
           
           <CTAButton size="lg" />
