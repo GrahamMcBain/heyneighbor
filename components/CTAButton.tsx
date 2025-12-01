@@ -1,15 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './Button'
-
-declare global {
-  interface Window {
-    DojoMenu?: {
-      open: () => void
-    }
-  }
-}
+import SignupModal from './SignupModal'
 
 interface CTAButtonProps {
   size?: 'sm' | 'md' | 'lg'
@@ -17,16 +10,15 @@ interface CTAButtonProps {
 }
 
 const CTAButton: React.FC<CTAButtonProps> = ({ size = 'lg', className }) => {
-  const handleClick = () => {
-    if (typeof window !== 'undefined' && window.DojoMenu) {
-      window.DojoMenu.open()
-    }
-  }
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <Button size={size} className={className} onClick={handleClick}>
-      Start Here
-    </Button>
+    <>
+      <Button size={size} className={className} onClick={() => setIsModalOpen(true)}>
+        Start Here
+      </Button>
+      <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   )
 }
 
