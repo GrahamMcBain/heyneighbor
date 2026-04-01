@@ -112,4 +112,62 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Line clamp utility */
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  .line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+}
+
+/* Blog content styling */
+@layer components {
+  .prose {
+    @apply text-gray-800 leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold text-gray-900 mt-8 mb-6;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold text-gray-900 mt-6 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-4 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside mb-4 space-y-2;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 pl-6 italic text-gray-700 my-6;
+  }
+
+  .prose a {
+    @apply text-blue-600 hover:text-blue-700 underline;
+  }
+
+  .prose img {
+    @apply rounded-lg my-8;
+  }
 }

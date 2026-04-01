@@ -1,0 +1,15 @@
+# Ignore environment files with secrets
+.env.directus.local
+.env.directus.production
+
+# Ignore uploaded files
+uploads/
+extensions/
+
+# Ignore database dumps
+*.sql
+*.dump
+
+# Ignore backup files
+*.tar.gz
+*.zip

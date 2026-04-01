@@ -2,11 +2,13 @@
   "name": "heyneighbor",
   "version": "1.0.0",
   "description": "HeyNeighbor marketing site",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup-cms": "node scripts/setup-directus.js"
   },
   "keywords": [
     "community",
@@ -16,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@directus/sdk": "^21.2.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/fs-extra": "^11.0.4",

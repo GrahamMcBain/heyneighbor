@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import RegionNav from '@/components/RegionNav'
 
 export const metadata: Metadata = {
   title: 'HeyNeighbor - Meet your neighbors. Change your block.',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="font-inter text-hn-blue bg-hn-parchment antialiased">
+        <RegionNav />
         {children}
       </body>
     </html>

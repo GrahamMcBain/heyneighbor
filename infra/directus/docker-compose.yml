@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    volumes:
+      - directus_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: directus
+      POSTGRES_PASSWORD: directus
+      POSTGRES_DB: directus
+    networks:
+      - directus
+
+  directus:
+    image: directus/directus:latest
+    restart: unless-stopped
+    ports:
+      - "8055:8055"
+    depends_on:
+      - db
+    volumes:
+      - directus_uploads:/directus/uploads
+      - directus_extensions:/directus/extensions
+    env_file:
+      - .env.directus
+    networks:
+      - directus
+
+volumes:
+  directus_db:
+  directus_uploads:
+  directus_extensions:
+
+networks:
+  directus:
