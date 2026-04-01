@@ -1,0 +1,75 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "infra/directus/Dockerfile"
+
+[deploy]
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+
+[[services]]
+name = "directus"
+
+[services.source]
+repo = "GrahamMcBain/heyneighbor"
+branch = "main"
+
+[[services.variables]]
+name = "DATABASE_URL"
+value = "${{Postgres.DATABASE_URL}}"
+
+[[services.variables]]
+name = "KEY"
+value = "heyneighbor-cms-production-key-change-me"
+
+[[services.variables]]
+name = "SECRET" 
+value = "heyneighbor-cms-production-secret-change-me"
+
+[[services.variables]]
+name = "ADMIN_EMAIL"
+value = "grahammcbain@gmail.com"
+
+[[services.variables]]
+name = "ADMIN_PASSWORD"
+value = "DirectusAdmin123!"
+
+[[services.variables]]
+name = "PUBLIC_URL"
+value = "${{RAILWAY_PUBLIC_DOMAIN}}"
+
+[[services.variables]]
+name = "CORS_ORIGIN"
+value = "https://heyneighbor.vercel.app,${{RAILWAY_PUBLIC_DOMAIN}}"
+
+[[services.variables]]
+name = "PORT"
+value = "8055"
+
+[[services.variables]]
+name = "DB_CLIENT"
+value = "pg"
+
+[[services.variables]]
+name = "DB_HOST" 
+value = "${{Postgres.PGHOST}}"
+
+[[services.variables]]
+name = "DB_PORT"
+value = "${{Postgres.PGPORT}}"
+
+[[services.variables]]
+name = "DB_DATABASE"
+value = "${{Postgres.PGDATABASE}}"
+
+[[services.variables]]
+name = "DB_USER"
+value = "${{Postgres.PGUSER}}"
+
+[[services.variables]]
+name = "DB_PASSWORD"
+value = "${{Postgres.PGPASSWORD}}"
+
+[[services]]
+name = "postgres"
+source = "postgres:15"
