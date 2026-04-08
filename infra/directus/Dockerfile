@@ -1,5 +1,15 @@
 FROM directus/directus:latest
 
+# Create uploads directory and copy setup script
+USER root
+RUN mkdir -p /directus/uploads && chown -R node:node /directus/uploads
+
+# Copy our setup script
+COPY setup.js /directus/setup.js
+RUN chown node:node /directus/setup.js
+
+USER node
+
 # Set environment variables
 ENV KEY="heyneighbor-cms-production-key-32chars"
 ENV SECRET="heyneighbor-cms-production-secret-64chars-change-in-production"
@@ -15,11 +25,6 @@ ENV RATE_LIMITER_ENABLED="true"
 ENV RATE_LIMITER_STORE="memory"
 ENV RATE_LIMITER_POINTS="100"
 ENV RATE_LIMITER_DURATION="60"
-
-# Create uploads directory
-USER root
-RUN mkdir -p /directus/uploads && chown -R node:node /directus/uploads
-USER node
 
 # Expose port
 EXPOSE 8055
