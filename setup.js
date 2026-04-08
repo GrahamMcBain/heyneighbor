@@ -1,5 +1,5 @@
 const ADMIN_EMAIL = 'grahammcbain@gmail.com';
-const ADMIN_PASSWORD = 'YourSecurePassword123!';
+const ADMIN_PASSWORD = 'Thanks!23';
 const API_URL = 'http://localhost:8055';
 
 async function setup() {
