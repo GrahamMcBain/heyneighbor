@@ -4,9 +4,10 @@ FROM directus/directus:latest
 USER root
 RUN mkdir -p /directus/uploads && chown -R node:node /directus/uploads
 
-# Copy our setup script
+# Copy our setup scripts
 COPY setup.js /directus/setup.js
-RUN chown node:node /directus/setup.js
+COPY live-setup.js /directus/live-setup.js
+RUN chown node:node /directus/setup.js /directus/live-setup.js
 
 USER node
 
