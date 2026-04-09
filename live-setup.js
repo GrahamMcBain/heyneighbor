@@ -170,9 +170,5 @@ async function setupLiveDirectus() {
   }
 }
 
-// Run if called directly
-if (require.main === module) {
-  setupLiveDirectus();
-}
-
-module.exports = setupLiveDirectus;
+// Run immediately (ES module)
+setupLiveDirectus();
