@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,20 +8,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        poppins: ['Montserrat', 'sans-serif'],
+        inter: ['Montserrat', 'sans-serif'],
       },
       colors: {
         hn: {
-          blue: "#12263A",      // Deep Space Blue (primary)
-          cyan: "#06BCC1",      // Strong Cyan (accent)
-          grey: "#C5D8D1",      // Ash Grey (neutral)
-          parchment: "#F4EDEA", // Parchment (light base)
-          apricot: "#F4D1AE"    // Soft Apricot (warm accent)
+          blue: "#574E42",
+          cyan: "#00A651",
+          grey: "#D8D2C3",
+          parchment: "#F8F8F2",
+          apricot: "#FAE6A1"
         },
       },
     },
   },
   plugins: [],
 }
-

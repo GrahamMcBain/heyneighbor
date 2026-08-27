@@ -1,80 +1,39 @@
-import React from 'react'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import Section from '@/components/Section'
-import Button from '@/components/Button'
+import type { Metadata } from 'next'
+import SiteFrame from '@/components/SiteFrame'
+import PageHero from '@/components/PageHero'
+import ActionLink from '@/components/ActionLink'
+import ContextCTA from '@/components/ContextCTA'
 
-export const metadata = {
-  title: 'Start a Chapter - HeyNeighbor',
-  description: 'Bring people together in your neighborhood with a simple weekly rhythm and zero pressure.',
+export const metadata: Metadata = {
+  title: 'Start Here',
+  description: 'Find the right next step for building community with your neighbors.',
+  alternates: { canonical: '/start' },
 }
+
+const paths = [
+  { quote: 'I barely know my neighbors.', text: 'Begin by choosing a clear, human-sized neighborhood and introducing yourself with honest motivation.', label: 'Start Step 1', href: '/guide/define-your-neighborhood' },
+  { quote: 'I know some neighbors, but we have never gotten together.', text: 'Skip straight to a simple first gathering. The kit gives you the location rules, invitation script, and checklist.', label: 'Plan a first block party', href: '/resources/first-block-party-kit' },
+  { quote: 'We have had a couple of neighborhood events.', text: 'Turn occasional attendance into actual relationships and a simple communication hub.', label: 'Build real connections', href: '/guide/make-one-on-one-connections' },
+  { quote: 'We have a community, but I organize everything.', text: 'Phase Two distributes ideas, events, traditions, and micro-roles so the neighborhood can own itself.', label: 'Move to Phase Two', href: '/guide/annual-neighborhood-planning-party' },
+]
 
 export default function StartPage() {
   return (
-    <div className="min-h-screen">
-      <Nav />
-      
-      <Section className="py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-poppins font-bold text-hn-blue mb-6">
-            Start a HeyNeighbor Chapter
-          </h1>
-          <p className="text-lg md:text-xl text-hn-blue/80 leading-relaxed mb-12">
-            Bring people together in your neighborhood with a simple weekly rhythm and zero pressure.
-          </p>
-          
-          <div className="bg-hn-parchment rounded-lg p-8 mb-12">
-            <h2 className="font-poppins font-semibold text-2xl text-hn-blue mb-6">
-              What you get:
-            </h2>
-            <ul className="text-left space-y-4 max-w-xl mx-auto">
-              <li className="flex items-start">
-                <span className="text-hn-cyan mr-3">•</span>
-                <span className="text-hn-blue">The 10-step HeyNeighbor playbook</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-hn-cyan mr-3">•</span>
-                <span className="text-hn-blue">The Chapter Lead Starter Kit</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-hn-cyan mr-3">•</span>
-                <span className="text-hn-blue">Access to the private WhatsApp group for leads</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-hn-cyan mr-3">•</span>
-                <span className="text-hn-blue">Weekly support calls</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-hn-cyan mr-3">•</span>
-                <span className="text-hn-blue">Templates, scripts, and event ideas</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a 
-              href={process.env.NEXT_PUBLIC_CHAPTER_START_URL || '#'} 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="w-full sm:w-auto">
-                Apply to Start a Chapter
-              </Button>
-            </a>
-            <a 
-              href={process.env.NEXT_PUBLIC_WHATSAPP_URL || '#'} 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                Join the Leads WhatsApp Group
-              </Button>
-            </a>
-          </div>
+    <SiteFrame>
+      <PageHero eyebrow="Your best next action" title="Start where your neighborhood actually is." description="You do not have to earn your way through a course. Choose the statement that sounds most like your street today." />
+      <section className="section">
+        <div className="site-container diagnostic-grid">
+          {paths.map((path, index) => (
+            <article className="diagnostic-card" key={path.quote}>
+              <p className="eyebrow">Path {index + 1}</p>
+              <p className="quote">“{path.quote}”</p>
+              <p>{path.text}</p>
+              <ActionLink href={path.href} variant="text">{path.label}</ActionLink>
+            </article>
+          ))}
         </div>
-      </Section>
-
-      <Footer />
-    </div>
+      </section>
+      <ContextCTA type="workshop" />
+    </SiteFrame>
   )
 }

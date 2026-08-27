@@ -1,61 +1,41 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
-import CTAButton from './CTAButton'
+import BrandLogo from './BrandLogo'
+import { navItems } from '@/content/site'
 
-const Nav: React.FC = () => {
+export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    if (!isOpen) return
+    const close = (event: KeyboardEvent) => event.key === 'Escape' && setIsOpen(false)
+    window.addEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
+  }, [isOpen])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-hn-blue/5' 
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="group">
-            <Image 
-              src="/brand/HN-dark-logo.svg" 
-              alt="HeyNeighbor" 
-              width={160} 
-              height={40}
-              className="transition-transform group-hover:scale-105"
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center">
-            <CTAButton size="sm" />
-          </div>
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-hn-blue hover:text-hn-cyan transition-colors p-2"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {isOpen && (
-          <div className="md:hidden bg-white rounded-2xl shadow-xl p-6 mb-4 border border-hn-grey/30">
-            <CTAButton className="w-full" />
-          </div>
-        )}
+    <header className="site-header">
+      <div className="site-container nav-inner">
+        <BrandLogo />
+        <nav aria-label="Primary navigation" className="desktop-nav">
+          {navItems.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+        </nav>
+        <Link href="/guide" className="nav-cta">Start the guide</Link>
+        <button type="button" className="menu-button" onClick={() => setIsOpen((open) => !open)} aria-expanded={isOpen} aria-controls="mobile-navigation" aria-label={isOpen ? 'Close navigation' : 'Open navigation'}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-    </nav>
+      {isOpen && (
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="mobile-nav">
+          <div className="site-container">
+            {navItems.map((item) => <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</Link>)}
+            <Link href="/guide" className="mobile-start" onClick={() => setIsOpen(false)}>Start the guide →</Link>
+          </div>
+        </nav>
+      )}
+    </header>
   )
 }
-
-export default Nav

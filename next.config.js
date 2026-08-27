@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   devIndicators: false,
+  turbopack: {
+    root: process.cwd(),
+  },
+  outputFileTracingRoot: process.cwd(),
   images: {
     remotePatterns: [
       {
@@ -18,4 +22,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default nextConfig

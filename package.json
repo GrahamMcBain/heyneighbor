@@ -17,6 +17,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "dependencies": {
     "@directus/sdk": "^21.2.1",
     "@hookform/resolvers": "^5.2.2",

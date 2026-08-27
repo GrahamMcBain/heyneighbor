@@ -1,8 +1,7 @@
 import { createDirectus, rest, readItems, readItem } from '@directus/sdk';
 
-// Define the schema for type safety
-interface Schema {
-  regions: {
+// Define the schema for type safety. Directus SDK collection values are arrays.
+interface RegionRecord {
     id: string;
     name: string;
     slug: string;
@@ -10,8 +9,10 @@ interface Schema {
     hero_image: string;
     seo_title: string;
     seo_description: string;
-  };
-  posts: {
+    status: 'draft' | 'published';
+}
+
+interface PostRecord {
     id: string;
     title: string;
     slug: string;
@@ -20,10 +21,11 @@ interface Schema {
     cover_image: string;
     published_at: string;
     status: 'draft' | 'published';
-    region: string;
-    author: string;
-  };
-  directus_users: {
+    region: RegionRecord;
+    author: DirectusUserRecord;
+}
+
+interface DirectusUserRecord {
     id: string;
     first_name: string;
     last_name: string;
@@ -31,7 +33,24 @@ interface Schema {
     avatar: string;
     bio: string;
     region: string;
-  };
+}
+
+interface Schema {
+  regions: RegionRecord[];
+  posts: PostRecord[];
+  directus_users: DirectusUserRecord[];
+}
+
+export interface PostView {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt?: string;
+  content?: string;
+  cover_image?: string;
+  published_at?: string;
+  region?: { name: string; slug: string };
+  author?: { first_name?: string; last_name?: string; bio?: string; avatar?: string };
 }
 
 // Create Directus client
@@ -73,7 +92,7 @@ export async function getRegionBySlug(slug: string) {
 
 export async function getPostsByRegion(regionSlug: string, limit = 10) {
   try {
-    return await directus.request(
+    const posts = await directus.request(
       readItems('posts', {
         fields: [
           'id',
@@ -82,8 +101,7 @@ export async function getPostsByRegion(regionSlug: string, limit = 10) {
           'excerpt',
           'cover_image',
           'published_at',
-          'author.first_name',
-          'author.last_name'
+          { author: ['first_name', 'last_name'] }
         ],
         filter: {
           status: { _eq: 'published' },
@@ -93,6 +111,7 @@ export async function getPostsByRegion(regionSlug: string, limit = 10) {
         limit
       })
     );
+    return posts as unknown as PostView[];
   } catch (error) {
     console.error('Error fetching posts:', error);
     return [];
@@ -105,12 +124,8 @@ export async function getPostBySlug(regionSlug: string, postSlug: string) {
       readItems('posts', {
         fields: [
           '*',
-          'author.first_name',
-          'author.last_name',
-          'author.bio',
-          'author.avatar',
-          'region.name',
-          'region.slug'
+          { author: ['first_name', 'last_name', 'bio', 'avatar'] },
+          { region: ['name', 'slug'] }
         ],
         filter: {
           slug: { _eq: postSlug },
@@ -120,7 +135,7 @@ export async function getPostBySlug(regionSlug: string, postSlug: string) {
         limit: 1
       })
     );
-    return posts[0] || null;
+    return (posts[0] as unknown as PostView) || null;
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;

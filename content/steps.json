@@ -1,52 +1,12 @@
 [
-  {
-    "id": 1,
-    "title": "Welcome Night",
-    "description": "Host your first neighborhood gathering to introduce the concept"
-  },
-  {
-    "id": 2,
-    "title": "Name Tags & Snacks",
-    "description": "Create a welcoming atmosphere with simple refreshments"
-  },
-  {
-    "id": 3,
-    "title": "Simple Icebreakers",
-    "description": "Easy conversation starters to help people connect"
-  },
-  {
-    "id": 4,
-    "title": "Weekly Rhythm",
-    "description": "Establish a consistent meeting schedule that works for everyone"
-  },
-  {
-    "id": 5,
-    "title": "Invitation Scripts",
-    "description": "Proven templates for inviting neighbors to join your community"
-  },
-  {
-    "id": 6,
-    "title": "Roles & Helpers",
-    "description": "Distribute responsibilities to build ownership and engagement"
-  },
-  {
-    "id": 7,
-    "title": "Shared Calendar",
-    "description": "Keep everyone informed about upcoming events and activities"
-  },
-  {
-    "id": 8,
-    "title": "New Neighbor Outreach",
-    "description": "Welcome newcomers and help them feel included from day one"
-  },
-  {
-    "id": 9,
-    "title": "Micro-Events",
-    "description": "Organize small, low-pressure activities to deepen connections"
-  },
-  {
-    "id": 10,
-    "title": "Pass the Baton",
-    "description": "Ensure your chapter continues to thrive with new leadership"
-  }
+  { "id": 1, "title": "Define Your Neighborhood", "description": "Choose a clear, human-sized area." },
+  { "id": 2, "title": "Be Friendly & Vulnerable", "description": "Say why knowing your neighbors matters to you." },
+  { "id": 3, "title": "Host Your First Block Party", "description": "Create a simple, low-stakes gathering." },
+  { "id": 4, "title": "Make One-on-One Connections", "description": "Turn introductions into relationships." },
+  { "id": 5, "title": "Create a Virtual Hub", "description": "Support real connection with one useful channel." },
+  { "id": 6, "title": "Host an Annual Planning Party", "description": "Move from your project to our neighborhood." },
+  { "id": 7, "title": "Create Traditions & Rituals", "description": "Make the best gatherings repeatable." },
+  { "id": 8, "title": "Give People Micro-Roles", "description": "Help everyone contribute in a small way." },
+  { "id": 9, "title": "Welcome New Neighbors", "description": "Create a clear front door to the community." },
+  { "id": 10, "title": "Share Your Story", "description": "Give another neighbor proof and permission." }
 ]
