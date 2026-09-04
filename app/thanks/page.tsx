@@ -18,7 +18,7 @@ export default function ThanksPage() {
       <Section className="py-20">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-poppins font-bold text-hn-blue mb-6">
-            You're In!
+            You&apos;re In!
           </h1>
           <p className="text-lg md:text-xl text-hn-blue/80 leading-relaxed mb-12">
             Your 10-step guide is on its way to your inbox.

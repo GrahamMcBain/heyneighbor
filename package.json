@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint app components content lib",
     "setup-cms": "node scripts/setup-directus.js"
   },
   "keywords": [

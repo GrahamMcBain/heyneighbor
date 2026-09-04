@@ -1,29 +1,19 @@
-'use client'
+import EmailDraftForm from './EmailDraftForm'
 
-import { FormEvent, useState } from 'react'
-
-export default function StoryForm() {
-  const [status, setStatus] = useState('')
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const lines = ['Hey Neighbor story submission', '', ...Array.from(data.entries()).map(([key, value]) => `${key}: ${String(value)}`)]
-    const recipient = process.env.NEXT_PUBLIC_STORY_EMAIL || 'hello@heyneighbor.org'
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent('My Hey Neighbor story')}&body=${encodeURIComponent(lines.join('\n'))}`
-    setStatus('Your email app should open with the story details. Add photos there before sending.')
-  }
+export default function StoryForm({ recipient }: { recipient?: string }) {
   return (
-    <form className="story-form" onSubmit={submit}>
-      <div className="form-field"><label htmlFor="name">Your name</label><input id="name" name="Name" required /></div>
-      <div className="form-field"><label htmlFor="location">City, state, or country</label><input id="location" name="Location" required /></div>
-      <div className="form-field form-field-full"><label htmlFor="before">What was the neighborhood like before?</label><textarea id="before" name="Before" required /></div>
-      <div className="form-field form-field-full"><label htmlFor="action">What did you try first?</label><textarea id="action" name="First action" required /></div>
-      <div className="form-field"><label htmlFor="attendance">Attendance, if known</label><input id="attendance" name="Attendance" /></div>
-      <div className="form-field"><label htmlFor="surprise">What surprised you?</label><input id="surprise" name="Surprise" /></div>
-      <div className="form-field form-field-full"><label htmlFor="after">What happened afterward?</label><textarea id="after" name="What happened next" required /></div>
-      <div className="form-field form-field-full"><label htmlFor="advice">What would you tell another neighbor?</label><textarea id="advice" name="Advice" /></div>
-      <div className="form-field form-field-full"><label htmlFor="permission">Publishing permission</label><select id="permission" name="Permission" required defaultValue=""><option value="" disabled>Choose one</option><option>I give Hey Neighbor permission to contact me about publishing this story.</option><option>Please contact me before using any part of this submission.</option></select></div>
-      <div className="form-field form-field-full"><button className="action-link action-link-primary" type="submit">Prepare my story email →</button><p className="form-note">Photos and video can be attached in your email app. {status}</p></div>
-    </form>
+    <EmailDraftForm recipient={recipient} subject="My Hey Neighbor story" label="Draft story email">
+      <div className="form-field"><label htmlFor="name">Your name (required)</label><input id="name" name="Name" autoComplete="name" maxLength={100} required /></div>
+      <div className="form-field"><label htmlFor="location">City, state, or country (optional)</label><input id="location" name="Location" maxLength={160} /><p className="form-note">Please leave out home addresses and neighbors&apos; private details.</p></div>
+      <div className="form-field form-field-full"><label htmlFor="before">What was the neighborhood like before? (required)</label><textarea id="before" name="Before" maxLength={1500} required /></div>
+      <div className="form-field form-field-full"><label htmlFor="action">What did you try first? (required)</label><textarea id="action" name="First action" maxLength={1500} required /></div>
+      <div className="form-field"><label htmlFor="attendance">Attendance, if known (optional)</label><input id="attendance" name="Attendance" maxLength={100} /></div>
+      <div className="form-field"><label htmlFor="surprise">What surprised you? (optional)</label><input id="surprise" name="Surprise" maxLength={500} /></div>
+      <div className="form-field form-field-full"><label htmlFor="after">What happened afterward? (required)</label><textarea id="after" name="What happened next" maxLength={1500} required /></div>
+      <div className="form-field form-field-full"><label htmlFor="advice">What would you tell another neighbor? (optional)</label><textarea id="advice" name="Advice" maxLength={1000} /></div>
+      <div className="form-field form-field-full"><label htmlFor="contact-permission">May we reply to your email to discuss your story? (required)</label><select id="contact-permission" name="Permission to follow up" required defaultValue=""><option value="" disabled>Choose one</option><option value="Yes, you may contact me about this story.">Yes, you may contact me about this story</option><option value="No, please do not follow up.">No, please do not follow up</option></select></div>
+      <div className="form-field form-field-full"><label htmlFor="publish-permission">May we publish your written story? (required)</label><select id="publish-permission" name="Written story publication permission" required defaultValue=""><option value="" disabled>Choose one</option><option value="No publication permission. Please keep my story private.">Keep my story private</option><option value="Ask for my approval of the final text and name credit before publication.">Ask me to approve the final text and name credit first</option></select><p className="form-note">Sending a story does not give permission to publish it. These choices do not subscribe you to marketing or authorize media publication or sponsored reuse.</p></div>
+      <div className="form-field form-field-full"><h3>Photos and video are optional</h3><p className="form-note">You can tell your whole story in words. Only attach media in your email if you have permission to share it from the rights holder and each recognizable participant, including appropriate parent or guardian permission for children. Your own consent does not cover other people. Publishing media or using it in sponsored content requires separate, specific permission.</p></div>
+    </EmailDraftForm>
   )
 }

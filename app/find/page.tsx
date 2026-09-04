@@ -21,7 +21,7 @@ export default function FindPage() {
             Find a HeyNeighbor Chapter Near You
           </h1>
           <p className="text-lg md:text-xl text-hn-blue/80 leading-relaxed mb-12">
-            We're adding new chapters every week. Browse the full directory below or start your own.
+            We&apos;re adding new chapters every week. Browse the full directory below or start your own.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -47,7 +47,7 @@ export default function FindPage() {
               Coming Soon
             </h2>
             <p className="text-hn-blue/80">
-              We're building an interactive map to help you find chapters in your area. 
+              We&apos;re building an interactive map to help you find chapters in your area.
               In the meantime, check out our directory or join the weekly call to connect with other chapter leads.
             </p>
           </div>

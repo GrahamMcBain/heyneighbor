@@ -3,6 +3,7 @@ import SiteFrame from '@/components/SiteFrame'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ActionLink from '@/components/ActionLink'
 import ContextCTA from '@/components/ContextCTA'
+import InvitationExamples from '@/components/InvitationExamples'
 
 export const metadata: Metadata = { title: 'First Block Party Kit', description: 'A simple, practical guide to planning, inviting, hosting, and following up after your first neighborhood gathering.', alternates: { canonical: '/resources/first-block-party-kit' } }
 
@@ -28,9 +29,10 @@ export default function BlockPartyKitPage() {
         </article>
         <article className="kit-panel"><p className="eyebrow">Before the party</p><h2>Checklist</h2><ul className="check-list"><li>Define the homes you are inviting</li><li>Choose a walkable location</li><li>Pick a simple 60–90 minute format</li><li>Knock on doors with a flyer</li><li>Choose the second gathering date</li></ul></article>
         <article className="kit-panel"><p className="eyebrow">At the party</p><h2>Keep momentum</h2><ul className="check-list"><li>Welcome people by name</li><li>Make useful introductions</li><li>Learn one thing about each household</li><li>Announce the next date</li><li>Invite one small follow-up connection</li></ul></article>
-        <article className="kit-panel kit-panel-full"><p className="eyebrow">Keep it nearby</p><h2>Printable companion</h2><p>The current printable includes the complete ten-step method. A designed, standalone party-kit PDF can replace it when supplied.</p><ActionLink href="/docs/HeyNeighbor-10-Step.pdf">Download the 10-Step PDF</ActionLink></article>
+        <article className="kit-panel kit-panel-full"><p className="eyebrow">Keep it nearby</p><h2>Free printable 10-step guide</h2><p>Download the complete ten-step method as a companion to this online party kit. Read it, print it, and share it with a neighbor. No signup required.</p><ActionLink href="/docs/HeyNeighbor-10-Step.pdf">Download the free 10-Step PDF</ActionLink></article>
       </div></section>
-      <ContextCTA type="workshop" />
+      <InvitationExamples />
+      <div className="section-tight"><ContextCTA type="workshop" /></div>
     </SiteFrame>
   )
 }

@@ -20,7 +20,7 @@ const paths = [
 export default function StartPage() {
   return (
     <SiteFrame>
-      <PageHero eyebrow="Your best next action" title="Start where your neighborhood actually is." description="You do not have to earn your way through a course. Choose the statement that sounds most like your street today." />
+      <PageHero eyebrow="Your best next action" title="Start where your neighborhood actually is." description="Every path is free. Choose the statement that sounds most like your street today and take one practical step." />
       <section className="section">
         <div className="site-container diagnostic-grid">
           {paths.map((path, index) => (

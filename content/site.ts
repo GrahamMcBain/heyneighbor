@@ -17,7 +17,7 @@ export const guideSteps: GuideStep[] = [
     phase: 1,
     summary: 'Choose a human-sized area so you know exactly who you are trying to know.',
     principle: 'A neighborhood community needs a boundary. Smaller is fine; roughly 200 homes is the working maximum.',
-    actions: ['Use walkability and natural boundaries', 'Account for likely participation', 'Write down the homes you will invite'],
+    actions: ['Use walkability and natural boundaries', 'Walk the area and notice where people already gather', 'Write down the homes you will invite'],
     resources: ['Neighborhood boundary worksheet', 'Invitation-count guide'],
   },
   {
@@ -27,7 +27,7 @@ export const guideSteps: GuideStep[] = [
     phase: 1,
     summary: 'Break the normal social script by saying plainly why you want to know the people around you.',
     principle: 'Friendly is good. Friendly plus honest motivation gives other people permission to reciprocate.',
-    actions: ['Introduce yourself without an agenda', 'Name your real motivation', 'Use the same language on your invitation'],
+    actions: ['Introduce yourself without an agenda', 'Ask about a garden, a pet, or how long someone has lived here—and remember the answer', 'Name your real motivation in conversation and on your invitation'],
     resources: ['Vulnerability statement builder', 'Neighbor conversation starters'],
   },
   {
@@ -47,7 +47,7 @@ export const guideSteps: GuideStep[] = [
     phase: 1,
     summary: 'Turn a crowd into relationships by connecting between gatherings and introducing neighbors to one another.',
     principle: 'Success is not the organizer knowing everyone. It is everybody beginning to know everybody else.',
-    actions: ['Invite one neighbor to do something small', 'Learn one useful thing about each person', 'Make thoughtful introductions at gatherings'],
+    actions: ['Notice a potential first ally: someone who stays to chat, asks questions, or helps clean up', 'Invite one neighbor for a walk, coffee, or another small activity', 'Make thoughtful introductions around shared interests'],
     resources: ['Easy neighbor hangout ideas', 'Neighbor introduction prompts'],
   },
   {
@@ -57,7 +57,7 @@ export const guideSteps: GuideStep[] = [
     phase: 1,
     summary: 'Give the neighborhood one simple communication channel without confusing the tool for the community.',
     principle: 'The virtual hub supports real-world relationships and prevents one person from becoming the communications bottleneck.',
-    actions: ['Choose the lowest-friction tool', 'Set three clear rules', 'Use the group to make in-person connection easier'],
+    actions: ['Ask which communication tool your neighbors already use', 'Set three clear rules', 'Use the group to make in-person connection easier'],
     resources: ['Copy-and-paste group rules', 'Facebook vs. WhatsApp comparison'],
   },
   {
@@ -67,7 +67,7 @@ export const guideSteps: GuideStep[] = [
     phase: 2,
     summary: 'Turn “you know what we should do?” into shared ideas with clear owners and dates.',
     principle: 'Phase Two converts your project into our neighborhood.',
-    actions: ['Invite every idea before evaluating', 'Ask the idea-maker when they want to host', 'Publish a shared annual calendar'],
+    actions: ['Bring snacks and big paper; make it a celebration, not a business meeting', 'Let neighbors claim ideas they are excited to host', 'Publish a shared annual calendar'],
     resources: ['Planning-party agenda', 'Annual neighborhood calendar'],
   },
   {
@@ -77,7 +77,7 @@ export const guideSteps: GuideStep[] = [
     phase: 2,
     summary: 'Repeat what people love until gatherings become part of the neighborhood identity.',
     principle: 'Traditions remove planning friction and create the feeling that “of course we do this together.”',
-    actions: ['Notice which events neighbors mention later', 'Choose a repeatable date or season', 'Give the tradition a simple name'],
+    actions: ['Choose something you genuinely enjoy hosting', 'Agree on a predictable monthly or seasonal rhythm', 'Give the tradition a simple name'],
     resources: ['Seasonal tradition ideas', 'Repeatable-event planner'],
   },
   {
@@ -87,7 +87,7 @@ export const guideSteps: GuideStep[] = [
     phase: 2,
     summary: 'Offer small, useful ways to contribute that do not require hosting a whole event.',
     principle: 'Belonging increases when people are needed.',
-    actions: ['List the small jobs the neighborhood needs', 'Invite people by interest and strength', 'Keep roles small enough to say yes to'],
+    actions: ['Offer specific jobs: bring chairs, deliver flyers, or greet arrivals', 'Invite people by interest and strength', 'Keep roles small enough to say yes to'],
     resources: ['Neighborhood Roles Menu', 'Event ownership sheet'],
   },
   {
@@ -107,13 +107,16 @@ export const guideSteps: GuideStep[] = [
     phase: 2,
     summary: 'Show the next ordinary person that this can work where they live too.',
     principle: 'A real story closes the loop: one neighborhood becomes proof and permission for another.',
-    actions: ['Describe what the neighborhood was like before', 'Record the first action and what happened', 'Share photos, flyers, and practical advice'],
+    actions: ['Describe what you hoped for and what made you nervous before starting', 'Record the first action and what actually happened', 'Share practical advice; include photos or video only with permission'],
     resources: ['Neighborhood story prompts', 'Photo and publishing checklist'],
   },
 ]
 
+export const teachingSlidesUrl = 'https://docs.google.com/presentation/d/1ZVVa5aqDG12LWO4vGnZL3l0oRywGYGITejt7cbJC68o/preview'
+
 export const resourceCards = [
   { title: 'Printable 10-Step Guide', description: 'Keep the complete method nearby and work through it one action at a time.', href: '/docs/HeyNeighbor-10-Step.pdf', label: 'Download the PDF', available: true },
+  { title: '10-Step Teaching Slides', description: 'Follow Graham’s presentation from the first invitation to shared neighborhood ownership. Free to view in Google Slides.', href: teachingSlidesUrl, label: 'View the slide deck', available: true },
   { title: 'First Block Party Kit', description: 'A practical plan, invitation language, checklist, and follow-up rhythm.', href: '/resources/first-block-party-kit', label: 'Open the free kit', available: true },
   { title: 'Door-Knocking Script', description: 'What to say, why it works, and how to leave the invitation without pressure.', href: '/resources/first-block-party-kit#door-script', label: 'Use the script', available: true },
   { title: 'Neighborhood Group Rules', description: 'Three rules that keep a digital group useful and connected to real life.', href: '/guide/create-a-neighborhood-group', label: 'Copy the rules', available: true },
@@ -133,4 +136,5 @@ export const navItems = [
   { label: 'Free Resources', href: '/resources' },
   { label: 'Stories', href: '/stories' },
   { label: 'Workshop', href: '/workshop' },
+  { label: 'Partner with us', href: '/partners' },
 ]
